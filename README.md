@@ -2,7 +2,13 @@
 
 Graphql Api built with Django and Graphene-django for a coding callenge:
 
-Query:
+**Setup**
+- pip install -r requirements.txt
+- /manage.py runserver
+
+
+**Query**
+Example:
 
 ```
 query Calculate($input:RequiredInput!){
@@ -10,7 +16,9 @@ query Calculate($input:RequiredInput!){
 }
 ```
 
-Input:
+**Input**
+Example
+
 ```
 {
   "input": {
@@ -20,3 +28,9 @@ Input:
   }
 }
 ```
+
+
+**Testing**
+To run tests:
+
+- ./manage.py test
