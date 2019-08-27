@@ -18,7 +18,6 @@ ALLOWED_HOSTS = [
     'https://coding-test-bc.herokuapp.com/',
     'coding-test-bc.herokuapp.com',
     'localhost'
-
 ]
 
 
