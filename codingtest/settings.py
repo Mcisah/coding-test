@@ -15,7 +15,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = [
-    'https://coding-test-bc.herokuapp.com/'
+    'https://coding-test-bc.herokuapp.com/',
+    'coding-test-bc.herokuapp.com'
 ]
 
 
