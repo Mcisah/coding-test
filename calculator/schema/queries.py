@@ -1,10 +1,12 @@
 import graphene
 import requests
+import graphql
+
 from calculator.schema.typeDefs import RequiredInput
 
 
 class Query(graphene.ObjectType):
-    calculatePrice = graphene.Field(graphene.String, arg=RequiredInput(required=True))
+    calculatePrice = graphene.Field(graphene.Float, arg=RequiredInput(required=True))
 
     @staticmethod
     def resolve_calculatePrice(self, info, arg):
@@ -15,20 +17,20 @@ class Query(graphene.ObjectType):
 
         # make api call
         url = 'https://api.coindesk.com/v1/bpi/currentprice/USD.json'
-        request = requests.get(url)
+        try:
+            request = requests.get(url)
+        except:
+            raise graphql.GraphQLError('request failed')
 
-        if request.status_code != 200:
-            return "An Error Occurred: Request Failed"
+        if request.status_code is not 200:
+            raise graphql.GraphQLError('request failed')
 
         result = request.json()
-        currentPrice = result['data']['bpi']['USD']['rate_float']
+        currentPrice = result['bpi']['USD']['rate_float']
 
         if type is 'sell':
-            val = (currentPrice - margin)
+            val = currentPrice - (margin / 100)
         else:
-            val = (currentPrice + margin)
+            val = currentPrice + (margin / 100)
 
-        finalVal = (exchangeRate * val)
-
-        # return output data
-        return "NGN"+str(finalVal)
+        return exchangeRate * val
