@@ -2,7 +2,7 @@
 
 Graphql Api built with Django and Graphene-django for a coding challenge:
 
-Hosted on heroku at: coding-test-bc.herokuapp.com
+Hosted on [heroku](https://coding-test-bc.herokuapp.com)
 
 **Setup**
 - pip install -r requirements.txt
