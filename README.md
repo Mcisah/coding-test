@@ -8,8 +8,8 @@ Graphql Api built with Django and Graphene-django for a coding callenge:
 
 
 **Query**
-Example:
 
+Example:
 ```
 query Calculate($input:RequiredInput!){
   calculatePrice(arg:$input)
@@ -17,8 +17,8 @@ query Calculate($input:RequiredInput!){
 ```
 
 **Input**
-Example
 
+Example
 ```
 {
   "input": {
@@ -31,6 +31,6 @@ Example
 
 
 **Testing**
-To run tests:
 
+To run tests:
 - ./manage.py test
