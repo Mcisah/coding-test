@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'calculator.apps.CalculatorConfig',
+
     'graphene_django',
 ]
 
