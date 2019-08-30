@@ -1,7 +1,7 @@
 import graphene
 
 
-class GenderEnum(graphene.Enum):
+class TypeEnum(graphene.Enum):
     sell = "sell"
     buy = "buy"
 
@@ -10,6 +10,6 @@ class GenderEnum(graphene.Enum):
 
 
 class RequiredInput(graphene.InputObjectType):
-    type = GenderEnum()
+    type = TypeEnum()
     margin = graphene.Float(description='This is a percentage that will be used in a calculation.')
     exchangeRate = graphene.Float(description='A custom USD/NGN exchange rate.')
